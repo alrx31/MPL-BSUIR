@@ -32,6 +32,10 @@ class Client:ClientBase(){
         hosting.addVideo(Music_Video("Music Video 1",10))
         hosting.addVideo(Music_Video("Music Video 2",10))
         hosting.addVideo(Music_Video("Music Video 3",10))
+        playlists.add(playList("1"))
+        playlists[0].addVideo(hosting.getVideo("1")!!)
+        playlists[0].addVideo(hosting.getVideo("Cat Video 2")!!)
+
     }
 
     override fun createVideo(){
@@ -122,18 +126,7 @@ class Client:ClientBase(){
             println("Playlist not found");
             return;
         }
-        var video = playlist.videos[0];
-        playlist.startVideo(video);
-        while (true){
-            println("1. Next video");
-            println("2. Exit");
-            var choice = readLine()!!.toInt();
-            if(choice == 1){
-                video = playlist.getNextVideo(video);
-                playlist.startVideo(video);
-            }else{
-                break;
-            }
-        }
+
+        playlist.startPlaylist();
     }
 }

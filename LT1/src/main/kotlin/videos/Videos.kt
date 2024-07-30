@@ -2,7 +2,7 @@ package videos
 abstract class playListBase(var Name:String){
     abstract fun addVideo(video: Video)
     abstract fun startVideo(video: Video)
-    abstract fun getNextVideo(video: Video):Video
+    abstract fun startPlaylist();
     abstract fun deleteVideo(video: Video)
 }
 
@@ -35,7 +35,7 @@ class playList(Name:String):playListBase(Name){
         println("Starting video: ${video.Name}")
     }
 
-    override fun getNextVideo(video: Video): Video {
+    private fun getNextVideo(video: Video): Video {
         var index = videos.indexOf(video)
         if(index == videos.size-1){
             println("last video in playlist, starting from beginning")
@@ -48,5 +48,27 @@ class playList(Name:String):playListBase(Name){
         // chech if video is in playlist
 
         videos.remove(video)
+    }
+    override fun startPlaylist(){
+        if(videos.size == 0){
+            println("Playlist is empty")
+            return
+        }
+        var video = videos[0]
+        startVideo(video)
+        while (true){
+            println("1. Next video")
+            println("2. Exit")
+            var choice = readLine()!!.toInt()
+            when(choice){
+                1->{
+                    video = getNextVideo(video)
+                    startVideo(video)
+                }
+                2->{
+                    break
+                }
+            }
+        }
     }
 }

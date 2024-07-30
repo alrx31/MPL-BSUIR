@@ -16,9 +16,9 @@ fun main(args: Array<String>){
         println("5. Create playlist")
         println("6. Add video to playlist")
         println("7. Start playlist")
+        println("8. Exit");
 
 
-        println("6. Exit")
         var choice = readln().toInt()
 
 
@@ -54,6 +54,9 @@ fun main(args: Array<String>){
                 println("Enter playlist name: ");
                 var name = readln();
                 client.startPlaylist(name);
+            }
+            8 ->{
+                break;
             }
         }
 
