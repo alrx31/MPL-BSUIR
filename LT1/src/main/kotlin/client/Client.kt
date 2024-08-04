@@ -42,12 +42,24 @@ class Client:ClientBase(){
         println("Enter video name: ");
         var name = readLine()!!;
         println("Enter video duration: ");
-        var duration = readLine()!!.toInt();
+        var duration:Number;
+        try{
+            duration= readLine()!!.toInt();
+        }catch (e:Exception){
+            println("InvalidInput");
+            return;
+        }
         println("Enter video type: ");
         println("1. Cat Video");
         println("2. Dog Video");
         println("3. Music Video");
-        var type = readLine()!!.toInt();
+        var type:Number;
+        try{
+            type = readLine()!!.toInt();
+        }catch(e:Exception){
+            println("Invalid Input");
+            return;
+        }
         if(type>3 || type<1){
             println("Invalid type");
             return;

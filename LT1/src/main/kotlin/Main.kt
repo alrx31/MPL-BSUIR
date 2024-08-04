@@ -18,8 +18,13 @@ fun main(args: Array<String>){
         println("7. Start playlist")
         println("8. Exit");
 
-
-        var choice = readln().toInt()
+        var choice:Number;
+        try{
+            choice = readln().toInt()
+        }catch (e:Exception){
+            println("invalid Input")
+            continue;
+        }
 
 
 
@@ -29,9 +34,13 @@ fun main(args: Array<String>){
             }
             2->{
                 var videos = client.getVideoList();
-                println("Videos:")
-                videos.forEach {
-                    println(it.Name)
+                if(videos.size == 0){
+                    println("No videos found")
+                }else{
+                    println("Videos:")
+                    videos.forEach {
+                        println(it.Name + " "+it.Duration)
+                    }
                 }
             }
             3->{
