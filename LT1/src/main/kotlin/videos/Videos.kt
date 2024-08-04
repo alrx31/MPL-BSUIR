@@ -46,7 +46,6 @@ class playList(Name:String):playListBase(Name){
 
     override fun deleteVideo(video: Video) {
         // chech if video is in playlist
-
         videos.remove(video)
     }
     override fun startPlaylist(){
