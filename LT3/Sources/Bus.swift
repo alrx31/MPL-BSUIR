@@ -1,10 +1,10 @@
 import Car
 
 public class Bus:Car{
-    var passengers: Int
-    var money: Double
+    public var passengers: Int
+    public var money: Double
     
-    init(x: Double, y: Double, direction: Double, passengers: Int = 0, money: Double = 0.0) {
+    public init(x: Double, y: Double, direction: Double, passengers: Int = 0, money: Double = 0.0) {
         self.passengers = passengers
         self.money = money
         super.init(x: x, y: y, direction: direction)
@@ -12,11 +12,11 @@ public class Bus:Car{
 
 
 
-    func enterPassenger() {
+    public func enterPassenger() {
         passengers += 1
     }
     
-    func exitPassenger() {
+    public func exitPassenger() {
         if passengers > 0 {
             passengers -= 1
         }
@@ -24,6 +24,6 @@ public class Bus:Car{
     
     override open func move(distance: Double) {
         super.move(distance: distance)
-        money += Double(passengers) * distance * 1.0 // Например, 1.0 денег за единицу расстояния на пассажира
+        money += Double(passengers) * distance * 0.9 
     }
 }

@@ -1,8 +1,8 @@
 import Foundation
 open class Car{
-    var x:Double
-    var y:Double
-    var direction:Double
+    public var x:Double
+    public var y:Double
+    public var direction:Double
 
     public init(x:Double, y:Double,direction:Double){
         self.x = x
@@ -19,7 +19,7 @@ open class Car{
         self.y += dy
     }
 
-    func turn(_dir:Double){
+    public func turn(_dir:Double){
         self.direction = _dir
     }
 }
