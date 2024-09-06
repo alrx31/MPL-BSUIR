@@ -16,7 +16,8 @@ fun main(args: Array<String>){
         println("5. Create playlist")
         println("6. Add video to playlist")
         println("7. Start playlist")
-        println("8. Exit");
+        println("8. Playlists list")
+        println("9. Exit");
 
         var choice:Number;
         try{
@@ -64,9 +65,16 @@ fun main(args: Array<String>){
                 var name = readln();
                 client.startPlaylist(name);
             }
-            8 ->{
-                break;
+            8 -> {
+                println("Playlists list")
+                var list = client.getAllPlaylists()
+                for (playlist in list){
+                    println(playlist.Name)
+                }
             }
+            9 -> {
+                break
+            };
         }
 
     }

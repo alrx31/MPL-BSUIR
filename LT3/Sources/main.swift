@@ -123,9 +123,10 @@ while true {
             print("2. Повернуть")
             print("3. Посадить пассажира")
             print("4. Высадить пассажира")
-            print("5. Сколько денег")
+            print("5. Сколько пассажиров")
+            print("6. Сколько денег")
             
-            print("6. Выйти")
+            print("7. Выйти")
 
             var option = -1;
 
@@ -143,11 +144,15 @@ while true {
                 print("неверный ввод")
             }
 
-            if option == 6 {
+            if option == 7 {
                 break
             }
-            if option == 5 {
+            if option == 6 {
                 print("Деньги: \(bus.money)")
+                continue
+            }
+            if option == 5{
+                print("Пассажиры: \(bus.passengers)")
                 continue
             }
 

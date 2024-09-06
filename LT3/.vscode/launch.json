@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:LT3}",
+            "name": "Debug LT3",
+            "program": "${workspaceFolder:LT3}\\.build\\debug\\LT3.exe",
+            "preLaunchTask": "swift: Build Debug LT3"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:LT3}",
+            "name": "Release LT3",
+            "program": "${workspaceFolder:LT3}\\.build\\release\\LT3.exe",
+            "preLaunchTask": "swift: Build Release LT3"
+        }
+    ]
+}

@@ -9,8 +9,9 @@ abstract class ClientBase {
     abstract fun deleteVideo(name: String);
     abstract fun createPlaylist();
     abstract fun addVideoToPlayList();
-
     abstract fun startPlaylist(Name:String);
+
+    abstract fun getAllPlaylists():List<playList>
 }
 
 
@@ -140,5 +141,9 @@ class Client:ClientBase(){
         }
 
         playlist.startPlaylist();
+    }
+
+    override fun getAllPlaylists():List<playList> {
+        return playlists;
     }
 }
