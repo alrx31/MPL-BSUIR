@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:LT4}",
+            "name": "Debug LT4",
+            "program": "${workspaceFolder:LT4}\\.build\\debug\\LT4.exe",
+            "preLaunchTask": "swift: Build Debug LT4"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:LT4}",
+            "name": "Release LT4",
+            "program": "${workspaceFolder:LT4}\\.build\\release\\LT4.exe",
+            "preLaunchTask": "swift: Build Release LT4"
+        }
+    ]
+}
